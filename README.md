@@ -9,7 +9,7 @@ Sistem informasi berbasis web untuk PT Parung Hijau Perkasa, perusahaan agribisn
 - [Fitur Utama](#-fitur-utama)
 - [Tech Stack](#-tech-stack)
 - [Prasyarat](#-prasyarat)
-- [Cara Setup di Device Baru](#-cara-setup-di-device-baru)
+- [Cara Setup](#-cara-setup-di-device-baru)
 - [Struktur Folder](#-struktur-folder)
 - [Akun Default](#-akun-default)
 - [Kontributor](#-kontributor)
@@ -187,18 +187,19 @@ Setelah melakukan seeding atau import SQL, gunakan akun berikut untuk login:
 | **Distribusi** | `distribusi_test` | `distribusi@test.com` | `password123` |
 | **Pelanggan** | `pelanggan_test` | `pelanggan@test.com` | `password123` |
 
-> ⚠️ **Penting:** Akun di atas tersedia setelah menjalankan `php spark db:seed UserSeeder` pada langkah ke-6.
+> ⚠️ **Penting:** Akun di atas tersedia setelah menjalankan `php spark db:seed DatabaseSeeder` pada langkah ke-6.
 
 ---
 
 ## 👥 Kontributor
 
-| Nama | NIM | Peran |
-|---|---|---|
-| Muhamad Faridzqi Suryadi | 24260045 | Fullstack Developer |
-
+| Nama |
+|---|
+| Muhamad Faridzqi Suryadi |
+| Dede Ahmad Fauzan |
+| Refa Aulia |
 ---
 
 ## 📄 Lisensi
 
-Proyek ini dibuat untuk keperluan akademik mata kuliah Pemrograman Web di Program Studi Informatika.
+Proyek ini dibuat untuk keperluan akademik mata kuliah Rekayasa Perangkat Lunak di Program Studi Informatika.

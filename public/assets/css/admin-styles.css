@@ -1,0 +1,193 @@
+/* Premium Botanical Theme Overrides for Dash template */
+:root {
+  --primary-color: #0c8a5f;
+  --primary-hover: #086d4a;
+  --bg-active: #e6f7f0;
+}
+
+.sidebar .nav-link.active {
+  background-color: #e0f2fe !important;
+  color: #0284c7 !important;
+  font-weight: 600;
+  border-radius: 6px;
+}
+.sidebar .nav-link.active i {
+  color: #0284c7 !important;
+}
+.sidebar .nav-link:hover {
+  background-color: #f0f9ff;
+  color: #0284c7 !important;
+}
+.text-primary {
+  color: var(--primary-color) !important;
+}
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+.btn-primary, .btn-outline-success, .btn-outline-primary {
+  background-color: #0284c7 !important;
+  border-color: #0284c7 !important;
+  color: #ffffff !important;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active,
+.btn-outline-success:hover, .btn-outline-success:focus, .btn-outline-success:active,
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
+  background-color: #0077b6 !important;
+  border-color: #0077b6 !important;
+  color: #ffffff !important;
+}
+
+/* Card Stat - Hover & Vivid Botanical Colors Overrides */
+.card-stat {
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  cursor: pointer;
+  border-radius: 8px !important;
+  border: 1px solid transparent !important;
+}
+.card-stat:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Soft Saturated Botanical Cards */
+.card-terracotta-soft {
+  background-color: #fdf2ee !important;
+  border: 1px solid rgba(224, 110, 75, 0.25) !important;
+}
+.card-terracotta-soft .icon-shape {
+  background-color: #e06e4b !important;
+  color: #ffffff !important;
+}
+.card-terracotta-soft .card-title, .card-terracotta-soft h2 {
+  color: #64748b !important;
+}
+.card-terracotta-soft h3 {
+  color: #1e293b !important;
+}
+.card-terracotta-soft .subtext {
+  color: #e06e4b !important;
+}
+
+.card-green-soft {
+  background-color: #eafaf1 !important;
+  border: 1px solid rgba(40, 199, 111, 0.25) !important;
+}
+.card-green-soft .icon-shape {
+  background-color: #00c689 !important;
+  color: #ffffff !important;
+}
+.card-green-soft .card-title, .card-green-soft h2 {
+  color: #64748b !important;
+}
+.card-green-soft h3 {
+  color: #1e293b !important;
+}
+.card-green-soft .subtext {
+  color: #00c689 !important;
+}
+
+.card-blue-soft {
+  background-color: #e8f7fd !important;
+  border: 1px solid rgba(0, 191, 255, 0.25) !important;
+}
+.card-blue-soft .icon-shape {
+  background-color: #00bfff !important;
+  color: #ffffff !important;
+}
+.card-blue-soft .card-title, .card-blue-soft h2 {
+  color: #64748b !important;
+}
+.card-blue-soft h3 {
+  color: #1e293b !important;
+}
+.card-blue-soft .subtext {
+  color: #00bfff !important;
+}
+
+.card-gold-soft {
+  background-color: #fff9e6 !important;
+  border: 1px solid rgba(255, 193, 7, 0.25) !important;
+}
+.card-gold-soft .icon-shape {
+  background-color: #ffc107 !important;
+  color: #ffffff !important;
+}
+.card-gold-soft .card-title, .card-gold-soft h2 {
+  color: #64748b !important;
+}
+.card-gold-soft h3 {
+  color: #1e293b !important;
+}
+.card-gold-soft .subtext {
+  color: #f3b007 !important;
+}
+
+/* Reduce font thickness slightly for bold elements */
+h1, h2, h3, h4, h5, h6, 
+.fw-bold, 
+strong, b, 
+th, 
+.sidebar .nav-link.active,
+.btn {
+  font-weight: 600 !important;
+}
+
+/* Make card labels and values slightly less heavy */
+.card-stat h3 {
+  font-weight: 600 !important;
+}
+.card-stat h2 {
+  font-weight: 500 !important;
+}
+
+/* Badge / Label overrides — solid bright bg, white text, subtle rounding */
+.badge {
+  border-radius: 4px !important;
+  font-weight: 500 !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.01em;
+  color: #ffffff !important;
+  --bs-bg-opacity: 1 !important;
+}
+.badge.bg-opacity-10 {
+  --bs-bg-opacity: 1 !important;
+}
+.badge.rounded-pill {
+  border-radius: 4px !important;
+}
+/* Force solid backgrounds — override bg-opacity-10 transparent variants */
+.badge.bg-success, .badge.bg-success.bg-opacity-10 {
+  background-color: #22c55e !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+.badge.bg-danger, .badge.bg-danger.bg-opacity-10 {
+  background-color: #ef4444 !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+.badge.bg-warning, .badge.bg-warning.bg-opacity-10 {
+  background-color: #f59e0b !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+.badge.bg-primary, .badge.bg-primary.bg-opacity-10 {
+  background-color: #0284c7 !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+.badge.bg-secondary, .badge.bg-secondary.bg-opacity-10 {
+  background-color: #94a3b8 !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+.badge.bg-info, .badge.bg-info.bg-opacity-10 {
+  background-color: #06b6d4 !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+/* Override text-* color classes inside badges */
+.badge.text-success, .badge.text-danger, .badge.text-warning,
+.badge.text-primary, .badge.text-secondary, .badge.text-info {
+  color: #ffffff !important;
+}

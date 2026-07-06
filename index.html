@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Activity Diagram - Sistem Pemesanan Produk</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fff;display:flex;justify-content:center;padding:20px;font-family:'Segoe UI',Arial,sans-serif}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="2250" viewBox="0 0 1200 2250">
+<defs>
+  <marker id="a" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#000"/></marker>
+  <marker id="ad" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#555"/></marker>
+</defs>
+
+<!-- ========== TITLE ========== -->
+<text x="600" y="32" text-anchor="middle" font-size="20" font-weight="bold" font-family="Segoe UI,Arial">Activity Diagram — Sistem Pemesanan Produk</text>
+
+<!-- ========== SWIMLANE FRAME ========== -->
+<rect x="10" y="50" width="1180" height="2060" fill="none" stroke="#000" stroke-width="2"/>
+<!-- Headers -->
+<rect x="10" y="50" width="280" height="40" fill="#e0e0e0" stroke="#000" stroke-width="1.5"/>
+<text x="150" y="76" text-anchor="middle" font-size="14" font-weight="bold" font-family="Segoe UI,Arial">Pelanggan</text>
+<rect x="290" y="50" width="270" height="40" fill="#e0e0e0" stroke="#000" stroke-width="1.5"/>
+<text x="425" y="76" text-anchor="middle" font-size="14" font-weight="bold" font-family="Segoe UI,Arial">Sistem</text>
+<rect x="560" y="50" width="280" height="40" fill="#e0e0e0" stroke="#000" stroke-width="1.5"/>
+<text x="700" y="76" text-anchor="middle" font-size="14" font-weight="bold" font-family="Segoe UI,Arial">Payment Gateway</text>
+<rect x="840" y="50" width="350" height="40" fill="#e0e0e0" stroke="#000" stroke-width="1.5"/>
+<text x="1015" y="76" text-anchor="middle" font-size="14" font-weight="bold" font-family="Segoe UI,Arial">Admin</text>
+<!-- Dividers -->
+<line x1="290" y1="50" x2="290" y2="2110" stroke="#000" stroke-width="1"/>
+<line x1="560" y1="50" x2="560" y2="2110" stroke="#000" stroke-width="1"/>
+<line x1="840" y1="50" x2="840" y2="2110" stroke="#000" stroke-width="1"/>
+
+<!-- ===================== NODES ===================== -->
+
+<!-- N1: Start ● [Pelanggan, y=120] -->
+<circle cx="150" cy="120" r="14" fill="#000"/>
+
+<!-- N2: Lihat Katalog Produk [Pelanggan, y=170-210] -->
+<rect x="50" y="175" width="200" height="40" rx="10" fill="#fff" stroke="#000" stroke-width="1.8"/>
+<text x="150" y="200" text-anchor="middle" font-size="13" font-family="Segoe UI,Arial">Lihat Katalog Produk</text>
+
+<!-- N3: Tambah Produk ke Keranjang [Pelanggan, y=265-305] -->
+<rect x="18" y="270" width="264" height="40" rx="10" fill="#fff" stroke="#000" stroke-width="1.8"/>
+<text x="150" y="295" text-anchor="middle" font-size="12" font-family="Segoe UI,Arial">Tambah Produk ke Keranjang</text>
+
+<!-- N4: Checkout [Pelanggan, y=360-400] -->
+<rect x="65" y="365" width="170" height="40" rx="10" fill="#fff" stroke="#000" stroke-width="1.8"/>
+<text x="150" y="390" text-anchor="middle" font-size="13" font-family="Segoe UI,Arial">Checkout</text>
+
+<!-- N5: Validasi Stok [Sistem, y=440-480] -->
+<rect x="330" y="445" width="190" height="40" rx="10" fill="#fff" stroke="#000" stroke-width="1.8"/>
+<text x="425" y="470" text-anchor="middle" font-size="13" font-family="Segoe UI,Arial">Validasi Stok</text>
+
+<!-- N6: Decision Stok Tersedia? [Sistem, diamond center y=555] -->
+<polygon points="425,525 495,555 425,585 355,555" fill="#fff" stroke="#000" stroke-width="1.8"/>
+<text x="425" y="552" text-anchor="middle" font-size="11" font-family="Segoe UI,Arial">Stok</text>
+<text x="425" y="565" text-anchor="middle" font-size="11" font-family="Segoe UI,Arial">Tersedia?</text>
+
+<!-- N7: Buat Pesanan [Sistem, y=640-680] -->
+<rect x="335" y="645" width="180" height="40" rx="10" fill="#fff" stroke="#000" stroke-width="1.8"/>
+<text x="425" y="670" text-anchor="middle" font-size="13" font-family="Segoe UI,Arial">Buat Pesanan</text>
+
+<!-- N8: Pilih Metode Pembayaran [Pelanggan, y=740-780] -->
+<rect x="12" y="745" width="276" height="40" rx="10" fill="#fff" stroke="#000" stroke-width="1.8"/>
+<text x="150" y="770" text-anchor="middle" font-size="12" font-family="Segoe UI,Arial">Pilih Metode Pembayaran</text>
+
+<!-- N9: Tampilkan Info Pembayaran [Sistem, y=840-880] -->
+<rect x="295" y="845" width="260" height="40" rx="10" fill="#fff" stroke="#000" stroke-width="1.8"/>
+<text x="425" y="870" text-anchor="middle" font-size="12" font-family="Segoe UI,Arial">Tampilkan Info Pembayaran</text>
+
+<!-- N10: Decision Metode Pembayaran? [Sistem, diamond center y=935] -->
+<polygon points="425,905 495,935 425,965 355,935" fill="#fff" stroke="#000" stroke-width="1.8"/>
+<text x="425" y="932" text-anchor="middle" font-size="10" font-family="Segoe UI,Arial">Metode</text>
+<text x="425" y="944" text-anchor="middle" font-size="10" font-family="Segoe UI,Arial">Pembayaran?</text>
+
+<!-- N11: Lakukan Pembayaran [Pelanggan, y=1000-1040] -->
+<rect x="30" y="1005" width="240" height="40" rx="10" fill="#fff" stroke="#000" stroke-width="1.8"/>
+<text x="150" y="1030" text-anchor="middle" font-size="13" font-family="Segoe UI,Arial">Lakukan Pembayaran</text>
+
+<!-- N12: Decision Pembayaran Berhasil? [PG, diamond center y=1130] -->
+<polygon points="700,1095 775,1130 700,1165 625,1130" fill="#fff" stroke="#000" stroke-width="1.8"/>
+<text x="700" y="1127" text-anchor="middle" font-size="10" font-family="Segoe UI,Arial">Pembayaran</text>
+<text x="700" y="1140" text-anchor="middle" font-size="10" font-family="Segoe UI,Arial">Berhasil?</text>
+
+<!-- N13: Unggah Bukti Transfer [Pelanggan, y=1260-1300] -->
+<rect x="18" y="1265" width="264" height="40" rx="10" fill="#fff" stroke="#000" stroke-width="1.8"/>
+<text x="150" y="1290" text-anchor="middle" font-size="12" font-family="Segoe UI,Arial">Unggah Bukti Transfer</text>
+
+<!-- N14: Simpan Bukti Transfer [Sistem, y=1370-1410] -->
+<rect x="305" y="1375" width="240" height="40" rx="10" fill="#fff" stroke="#000" stroke-width="1.8"/>
+<text x="425" y="1400" text-anchor="middle" font-size="12" font-family="Segoe UI,Arial">Simpan Bukti Transfer</text>
+
+<!-- N15: Decision Verifikasi Pembayaran? [Admin, diamond center y=1500] -->
+<polygon points="1015,1465 1090,1500 1015,1535 940,1500" fill="#fff" stroke="#000" stroke-width="1.8"/>
+<text x="1015" y="1497" text-anchor="middle" font-size="10" font-family="Segoe UI,Arial">Verifikasi</text>
+<text x="1015" y="1510" text-anchor="middle" font-size="10" font-family="Segoe UI,Arial">Pembayaran?</text>
+
+<!-- N16: Status Pending [Admin, y=1580-1620] -->
+<rect x="910" y="1585" width="210" height="40" rx="10" fill="#fff" stroke="#000" stroke-width="1.8"/>
+<text x="1015" y="1610" text-anchor="middle" font-size="13" font-family="Segoe UI,Arial">Status Pending</text>
+
+<!-- N17: Proses Pembayaran [Sistem, y=1740-1780] -->
+<rect x="320" y="1745" width="210" height="40" rx="10" fill="#fff" stroke="#000" stroke-width="1.8"/>
+<text x="425" y="1770" text-anchor="middle" font-size="13" font-family="Segoe UI,Arial">Proses Pembayaran</text>
+
+<!-- N18: Tampilkan Invoice [Sistem, y=1840-1880] -->
+<rect x="330" y="1845" width="190" height="40" rx="10" fill="#fff" stroke="#000" stroke-width="1.8"/>
+<text x="425" y="1870" text-anchor="middle" font-size="13" font-family="Segoe UI,Arial">Tampilkan Invoice</text>
+
+<!-- N19: Lihat Invoice [Pelanggan, y=1940-1980] -->
+<rect x="60" y="1945" width="180" height="40" rx="10" fill="#fff" stroke="#000" stroke-width="1.8"/>
+<text x="150" y="1970" text-anchor="middle" font-size="13" font-family="Segoe UI,Arial">Lihat Invoice</text>
+
+<!-- N20: End ◉ [Pelanggan, y=2040] -->
+<circle cx="150" cy="2040" r="16" fill="none" stroke="#000" stroke-width="2.5"/>
+<circle cx="150" cy="2040" r="9" fill="#000"/>
+
+
+<!-- ===================== ARROWS ===================== -->
+
+<!-- A1: Start → Lihat Katalog -->
+<line x1="150" y1="134" x2="150" y2="175" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+
+<!-- A2: Lihat Katalog → Tambah Produk -->
+<line x1="150" y1="215" x2="150" y2="270" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+
+<!-- A3: Tambah Produk → Checkout -->
+<line x1="150" y1="310" x2="150" y2="365" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+
+<!-- A4: Checkout → Validasi Stok [P→S cross-lane] -->
+<polyline points="235,385 425,385 425,445" fill="none" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+
+<!-- A5: Validasi Stok → Decision Stok -->
+<line x1="425" y1="485" x2="425" y2="525" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+
+<!-- A6: Decision [Ya] → Buat Pesanan -->
+<line x1="425" y1="585" x2="425" y2="645" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="440" y="622" font-size="11" font-style="italic" font-family="Segoe UI,Arial">[Ya]</text>
+
+<!-- A7: Decision [Tidak] → dashed back to Tambah Produk -->
+<polyline points="495,555 555,555 555,290 282,290" fill="none" stroke="#555" stroke-width="1.5" stroke-dasharray="7,4" marker-end="url(#ad)"/>
+<text x="528" y="545" text-anchor="middle" font-size="11" font-style="italic" font-family="Segoe UI,Arial">[Tidak]</text>
+
+<!-- A8: Buat Pesanan → Pilih Metode [S→P] -->
+<polyline points="335,665 150,665 150,745" fill="none" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+
+<!-- A9: Pilih Metode → Tampilkan Info [P→S] -->
+<polyline points="288,765 425,765 425,845" fill="none" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+
+<!-- A10: Tampilkan Info → Decision Metode Pembayaran -->
+<line x1="425" y1="885" x2="425" y2="905" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+
+<!-- A11: Decision [Payment Gateway] → Lakukan Pembayaran -->
+<polyline points="355,935 150,935 150,1005" fill="none" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="245" y="928" text-anchor="middle" font-size="10" font-style="italic" font-family="Segoe UI,Arial">[Payment Gateway]</text>
+
+<!-- A12: Decision [Transfer Manual] → Unggah Bukti Transfer -->
+<!-- From right point of diamond → down → bridge over horizontal at y=1025 → to Pelanggan lane -->
+<!-- Segment 1: right of diamond down to just above crossing -->
+<line x1="495" y1="935" x2="545" y2="935" stroke="#000" stroke-width="1.5"/>
+<line x1="545" y1="935" x2="545" y2="1013" stroke="#000" stroke-width="1.5"/>
+<!-- Bridge arc over horizontal at y=1025 -->
+<path d="M545,1013 A12,12 0 0,1 545,1037" fill="none" stroke="#000" stroke-width="1.5"/>
+<!-- Segment 2: below crossing to turn point -->
+<line x1="545" y1="1037" x2="545" y2="1145" stroke="#000" stroke-width="1.5"/>
+<!-- Turn left to Pelanggan lane -->
+<polyline points="545,1145 150,1145 150,1265" fill="none" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="520" y="928" text-anchor="middle" font-size="10" font-style="italic" font-family="Segoe UI,Arial">[Transfer Manual]</text>
+
+<!-- A13: Lakukan Pembayaran → PG Decision [P→PG, horizontal at y=1025] -->
+<polyline points="270,1025 700,1025 700,1095" fill="none" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+
+<!-- A14: PG Decision [Ya] → goes down in PG lane → turns left to Proses Pembayaran -->
+<polyline points="700,1165 700,1710 425,1710 425,1745" fill="none" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="716" y="1190" font-size="11" font-style="italic" font-family="Segoe UI,Arial">[Ya]</text>
+
+<!-- A15: PG Decision [Tidak] → dashed back to Lakukan Pembayaran -->
+<!-- Route: left from diamond → down slightly to y=1155 → far left x=25 → up to box left edge -->
+<path d="M625,1130 L625,1155 L25,1155 L25,1025 L30,1025" fill="none" stroke="#555" stroke-width="1.5" stroke-dasharray="7,4" marker-end="url(#ad)"/>
+<text x="595" y="1118" font-size="11" font-style="italic" font-family="Segoe UI,Arial">[Tidak]</text>
+
+<!-- A16: Unggah Bukti → Simpan Bukti [P→S] -->
+<polyline points="282,1285 425,1285 425,1375" fill="none" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+
+<!-- A17: Simpan Bukti → Verifikasi Decision [S→A] -->
+<!-- This horizontal crosses PG [Ya] vertical at x=700. Bridge arc at crossing. -->
+<!-- Segment 1: right edge of box to just before crossing -->
+<line x1="545" y1="1395" x2="688" y2="1395" stroke="#000" stroke-width="1.5"/>
+<!-- Bridge arc over PG [Ya] vertical at x=700 -->
+<path d="M688,1395 A12,12 0 0,1 712,1395" fill="none" stroke="#000" stroke-width="1.5"/>
+<!-- Segment 2: after crossing to Admin lane -->
+<polyline points="712,1395 1015,1395 1015,1465" fill="none" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+
+<!-- A18: Verifikasi [Ya] → merge with PG [Ya] line → to Proses Pembayaran -->
+<line x1="940" y1="1500" x2="700" y2="1500" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="825" y="1492" font-size="11" font-style="italic" font-family="Segoe UI,Arial">[Ya]</text>
+<!-- Small merge dot at junction -->
+<circle cx="700" cy="1500" r="4" fill="#000"/>
+
+<!-- A19: Verifikasi [Tidak] → Status Pending -->
+<line x1="1015" y1="1535" x2="1015" y2="1585" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="1045" y="1565" font-size="11" font-style="italic" font-family="Segoe UI,Arial">[Tidak]</text>
+
+<!-- A20: Status Pending → dashed back to Unggah Bukti Transfer -->
+<!-- Route: down to bottom of diagram → far left → up to Unggah Bukti -->
+<path d="M1015,1625 L1015,2085 L25,2085 L25,1305 L18,1305" fill="none" stroke="#555" stroke-width="1.5" stroke-dasharray="7,4" marker-end="url(#ad)"/>
+
+<!-- A21: Proses Pembayaran → Tampilkan Invoice -->
+<line x1="425" y1="1785" x2="425" y2="1845" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+
+<!-- A22: Tampilkan Invoice → Lihat Invoice [S→P] -->
+<polyline points="330,1865 150,1865 150,1945" fill="none" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+
+<!-- A23: Lihat Invoice → End -->
+<line x1="150" y1="1985" x2="150" y2="2024" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+
+
+<!-- ===================== LEGEND ===================== -->
+<rect x="20" y="2130" width="1160" height="60" fill="#f8f8f8" stroke="#000" stroke-width="1" rx="5"/>
+<text x="40" y="2158" font-size="12" font-weight="bold" font-family="Segoe UI,Arial">Legenda:</text>
+
+<!-- Initial Node -->
+<circle cx="120" cy="2168" r="6" fill="#000"/>
+<text x="133" y="2172" font-size="11" font-family="Segoe UI,Arial">Initial Node</text>
+
+<!-- Final Node -->
+<circle cx="225" cy="2168" r="8" fill="none" stroke="#000" stroke-width="2"/>
+<circle cx="225" cy="2168" r="4" fill="#000"/>
+<text x="238" y="2172" font-size="11" font-family="Segoe UI,Arial">Final Node</text>
+
+<!-- Action -->
+<rect x="330" y="2158" width="40" height="18" rx="5" fill="#fff" stroke="#000" stroke-width="1.5"/>
+<text x="378" y="2172" font-size="11" font-family="Segoe UI,Arial">Action</text>
+
+<!-- Decision -->
+<polygon points="450,2159 465,2168 450,2177 435,2168" fill="#fff" stroke="#000" stroke-width="1.5"/>
+<text x="475" y="2172" font-size="11" font-family="Segoe UI,Arial">Decision</text>
+
+<!-- Merge -->
+<circle cx="557" cy="2168" r="4" fill="#000"/>
+<text x="570" y="2172" font-size="11" font-family="Segoe UI,Arial">Merge Point</text>
+
+<!-- Flow -->
+<line x1="650" y1="2168" x2="690" y2="2168" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="698" y="2172" font-size="11" font-family="Segoe UI,Arial">Flow</text>
+
+<!-- Alternate -->
+<line x1="745" y1="2168" x2="785" y2="2168" stroke="#555" stroke-width="1.5" stroke-dasharray="7,4" marker-end="url(#ad)"/>
+<text x="793" y="2172" font-size="11" font-family="Segoe UI,Arial">Alternate/Return</text>
+
+<!-- Bridge -->
+<path d="M920,2168 A8,8 0 0,1 936,2168" fill="none" stroke="#000" stroke-width="1.5"/>
+<text x="944" y="2172" font-size="11" font-family="Segoe UI,Arial">Bridge (crossing)</text>
+
+</svg>
+</body>
+</html>
